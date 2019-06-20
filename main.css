@@ -153,12 +153,12 @@ html, body {
     display: none;
   }
 
-   a:visited {
+   a:visited,a:link {
      color: #707070;
      text-decoration: none;
    }
 
-   a:link,a:hover,a:active {
+   a:hover,a:active {
      color: black;
      text-decoration: none;
    }
