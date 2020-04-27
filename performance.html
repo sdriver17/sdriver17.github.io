@@ -29,9 +29,10 @@
     <button onclick="dropDown()" class="dropbtn" id="mobile">MENU</button>
     <div id="myDropdown" class="dropdown-content" id="mobile">
       <a href="index.html" id="mobile">Home</a>
-      <a href="performance.html" id="mobile">Performance</a>
-      <a href="lighting.html" id="mobile">Lighting</a>
+      <a href="performance.html" id="mobile">Acting</a>
+      <a href="lighting.html" id="mobile">Design</a>
       <a href="coding.html" id="mobile">Coding</a>
+      <a href="media.html" id="mobile">Media</a>
       <a href="contact.html" id="mobile">Contact</a>
     </div>
   </div>
@@ -40,14 +41,19 @@
     <div class="name"><p id="title-text"> SAM DRIVER </p></div>
   </div>
 
+  <div id ="training">
   <h2> TRAINING </h2>
+    <div id="training-text">
+      <h4> Royal Academy of Dramatic Arts </h4> <p> A semester of intensive Shakespeare training, providing hands–on experience with some of the most respected theater professors in England. </p>
 
-  <h4> Royal Academy of Dramatic Arts </h4> <p> A semester of intensive Shakespeare training, providing hands–on experience with some of the most respected theater professors in England. </p>
+      <h4> Wesleyan University </h4> <p> Double Major: Theater, Computer Science; Relevant Coursework: Lighting Design, Directing 1, Acting 1, Special Topics in Theater History, Private Vocal Study; GPA: 3.5 </p>
 
-  <h4> Wesleyan University </h4> <p> Double Major: Theater, Computer Science; Relevant Coursework: Lighting Design, Directing 1, Acting 1, Special Topics in Theater History, Private Vocal Study; GPA: 3.5 </p>
+      <h4> SUNY Purchase </h4> <p> Two Summer Shakespeare Intensives attending workshops and performing. Highlights include playing Orlando in As You Like It, and Oberon in A Midsummer Night’s Dream </p>
+    </div>
 
-  <h4> SUNY Purchase </h4> <p> Two Summer Shakespeare Intensives attending workshops and performing. Highlights include playing Orlando in As You Like It, and Oberon in A Midsummer Night’s Dream </p>
+      <img id="training-pic"  src=ppic2.jpg></img>
 
+  </div>
   <h2> SELECTED CREDITS </h2>
 
   <table id="performances">
@@ -62,8 +68,16 @@
   <tr>
     <td> James </td>
     <td> Tech Gnomes </td>
-    <td> Wesleyan University </td>
+    <td> Cardinal Pictures </td>
     <td> 2018/2019 </td>
+  </tr>
+
+
+  <tr>
+    <td> Frank Strang </td>
+    <td> Equus </td>
+    <td> Wesleyan University </td>
+    <td> 2020 </td>
   </tr>
 
   <tr>
@@ -117,13 +131,6 @@
 
   </table>
 
-  <h2> PERFORMANCE VIDEOS </h2>
-
-  <iframe id="player" width="450" height="315" src="https://www.youtube-nocookie.com/embed/FrpTMCCNIyw?start=1148" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  <iframe id="player" width="450" height="315" src="https://www.youtube-nocookie.com/embed/DitPfhRzE-8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 </div>
 
 <div id="desktop">
@@ -131,97 +138,107 @@
   <div class="header">
     <div class="name"><p id="title-text"> SAM DRIVER </p></div>
     <div class="nav-button"> <a href = "contact.html"><p class="nav-label" id="off-wall"> Contact </p></a></div>
+    <div class="nav-button"> <a href = "media.html"><p class="nav-label"> Media </p></a></div>
     <div class="nav-button"> <a href = "coding.html"><p class="nav-label"> Coding </p></a></div>
-    <div class="nav-button"> <a href = "lighting.html"><p class="nav-label"> Lighting </p></a></div>
-    <div class="nav-button"> <a href = "performance.html" id="current"><p class="nav-label"> Performance </p></a></div>
+    <div class="nav-button"> <a href = "lighting.html"><p class="nav-label"> Design </p></a></div>
+    <div class="nav-button"> <a href = "performance.html" id="current"><p class="nav-label"> Acting </p></a></div>
     <div class="nav-button"> <a href = "index.html"><p class="nav-label"> Home </p></a></div>
   </div>
 
 <div id="container">
 
-  <h2> TRAINING </h2>
+  <div class="row-1">
+    <h2> TRAINING </h2>
+      <div id="training-text">
+        <h4> Royal Academy of Dramatic Arts </h4> <p> A semester of intensive Shakespeare training, providing hands–on experience with some of the most respected theater professors in England. </p>
 
-  <h4> Royal Academy of Dramatic Arts </h4> <p> A semester of intensive Shakespeare training, providing hands on experience with some of the most respected theater professors in England. </p>
+        <h4> Wesleyan University </h4> <p> Double Major: Theater, Computer Science; Relevant Coursework: Lighting Design, Directing 1, Acting 1, Special Topics in Theater History, Private Vocal Study; GPA: 3.5 </p>
 
-  <h4> Wesleyan University </h4> <p> Double Major: Theater, Computer Science; Relevant Coursework: Lighting Design, Directing 1, Acting 1, Special Topics in Theater History, Private Vocal Study; GPA: 3.5/4.0 </p>
+        <h4> SUNY Purchase </h4> <p> Two Summer Shakespeare Intensives attending workshops and performing. Highlights include playing Orlando in As You Like It, and Oberon in A Midsummer Night’s Dream </p>
+      </div>
 
-  <h4> SUNY Purchase </h4> <p> Two Summer Shakespeare Intensives attending workshops and performing. Highlights include playing Orlando in As You Like It, and Oberon in A Midsummer Night’s Dream </p>
+        <img id="training-pic"  src=ppic2.jpg></img>
 
-  <h2> SELECTED CREDITS </h2>
+  </div>
 
-  <table id="performances">
+  <div class="row-2">
+    <h2 style=""> SELECTED CREDITS </h2>
 
-    <tr>
-      <td> Macbeth </td>
-      <td> Macbeth </td>
-      <td> RADA </td>
-      <td> 2019 </td>
-    </tr>
+    <table id="performances">
+      <tr>
+        <td> Macbeth </td>
+        <td> Macbeth </td>
+        <td> RADA </td>
+        <td> 2019 </td>
+      </tr>
 
-    <tr>
-      <td> James </td>
-      <td> Tech Gnomes </td>
-      <td> Wesleyan University </td>
-      <td> 2018/2019 </td>
-    </tr>
+      <tr>
+        <td> James </td>
+        <td> Tech Gnomes </td>
+        <td> Cardinal Pictures </td>
+        <td> 2018/2019 </td>
+      </tr>
 
-    <tr>
-      <td> Andy </td>
-      <td> Snake Oil </td>
-      <td> Wesleyan University </td>
-      <td> 2019 </td>
-    </tr>
 
-    <tr>
-      <td> Billy </td>
-      <td> The Goat, or Who is Sylvia </td>
-      <td> Wesleyan University </td>
-      <td> 2018 </td>
-    </tr>
+      <tr>
+        <td> Frank Strang </td>
+        <td> Equus </td>
+        <td> Wesleyan University </td>
+        <td> 2020 </td>
+      </tr>
 
-    <tr>
-      <td> Antipholus of Ephesus </td>
-      <td> The Boys from Syracuse </td>
-      <td> Briarcliff Manor HS </td>
-      <td> 2018 </td>
-    </tr>
+      <tr>
+        <td> Andy </td>
+        <td> Snake Oil </td>
+        <td> Wesleyan University </td>
+        <td> 2019 </td>
+      </tr>
 
-    <tr>
-      <td> Phileas Fogg </td>
-      <td> Around the World in 80 Days </td>
-      <td> Briarcliff Manor HS </td>
-      <td> 2017 </td>
-    </tr>
+      <tr>
+        <td> Billy </td>
+        <td> The Goat, or Who is Sylvia </td>
+        <td> Wesleyan University </td>
+        <td> 2018 </td>
+      </tr>
 
-    <tr>
-      <td> Jean-Michel </td>
-      <td> Cinderella </td>
-      <td> Briarcliff Manor HS </td>
-      <td> 2017 </td>
-    </tr>
+      <tr>
+        <td> Antipholus of Ephesus </td>
+        <td> The Boys from Syracuse </td>
+        <td> Briarcliff Manor HS </td>
+        <td> 2018 </td>
+      </tr>
 
-    <tr>
-      <td> GH Hardy </td>
-      <td> A Dissapearing Number </td>
-      <td> Briarcliff Manor HS </td>
-      <td> 2016 </td>
-    </tr>
+      <tr>
+        <td> Phileas Fogg </td>
+        <td> Around the World in 80 Days </td>
+        <td> Briarcliff Manor HS </td>
+        <td> 2017 </td>
+      </tr>
 
-    <tr>
-      <td> Ferdinand </td>
-      <td> The Tempest </td>
-      <td> Briarcliff Manor HS </td>
-      <td> 2015 </td>
-    </tr>
+      <tr>
+        <td> Jean-Michel </td>
+        <td> Cinderella </td>
+        <td> Briarcliff Manor HS </td>
+        <td> 2017 </td>
+      </tr>
+
+      <tr>
+        <td> GH Hardy </td>
+        <td> A Dissapearing Number </td>
+        <td> Briarcliff Manor HS </td>
+        <td> 2016 </td>
+      </tr>
+
+      <tr>
+        <td> Ferdinand </td>
+        <td> The Tempest </td>
+        <td> Briarcliff Manor HS </td>
+        <td> 2015 </td>
+      </tr>
+
 
   </table>
-
-  <h2> PERFORMANCE VIDEOS </h2>
-
-  <iframe id="player" width="560" height="315" src="https://www.youtube-nocookie.com/embed/FrpTMCCNIyw?start=1148" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  <iframe id="player" width="560" height="315" src="https://www.youtube-nocookie.com/embed/DitPfhRzE-8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+</div>
 </div>
 
   <footer class = "footer">
