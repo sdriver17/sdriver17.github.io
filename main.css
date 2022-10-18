@@ -11,7 +11,124 @@ html, body {
   background-color: rgba(255,255,250,0);
 }
 
+ul {
+  padding-inline-start: 0px;
+}
+
+/* Style all font awesome icons */
+.fa {
+  padding: 10px;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  bottom: 100%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-linkedin {
+  background: #dd8fb9;
+  color: white;
+}
+
+.fa-instagram {
+  background: #dd8fb9;
+  color: white;
+}
+
+.fa-github {
+  background: #dd8fb9;
+  color: white;
+}
+
+#faculty {
+  margin: 0px;
+  padding-left: 7.5%;
+}
+
 @media only screen and (max-width: 770px) {
+
+  * {box-sizing:border-box}
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin-top: 10px;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
 
   a:visited,a:link {
     color: #707070;
@@ -51,6 +168,19 @@ html, body {
     color: #424242;
   }
 
+  .social-container {
+    display: flex;
+    justify-content: center;
+    margin: 0px ;
+    width: 100%;
+  }
+  
+  .social-icons {
+    padding:0 px;
+    float: right;
+    margin: 0px ;
+  }
+
   /* #buzzwords {
     text-align: center;
     line-height: 30px;
@@ -75,7 +205,7 @@ html, body {
   }
 
   #headshot {
-    width: 65%;
+    width: 100%;
   }
 
   #desktop{
@@ -90,12 +220,12 @@ html, body {
    /* position: absolute; */
    bottom: 0px;
    width: 100%;
-   height: 30px;
+   height: 100px;
    /* background-color:#861EF5; */
-   float: left;
    padding-top: 5px;
    padding-bottom: 15px;
    z-index: 5;
+   display:inline-block;
  }
 
   /* Dropdown Button */
@@ -152,6 +282,96 @@ html, body {
     display: none;
   }
 
+  * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-top: 10px;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+  .social-container {
+    float: right;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+  
+  .social-icons {
+    float: right;
+    margin: 0;
+  }
+
    a:visited,a:link {
      color: #707070;
      text-decoration: none;
@@ -192,8 +412,17 @@ html, body {
    }
 
   .row-1 {
+    width: 100%;
     height: auto;
     float: left;
+    overflow: hidden;
+  }
+
+  .row-1-flex {
+    width: 100%;
+    height: auto;
+    display: flex;    
+    overflow: hidden;
   }
 
   .name {
@@ -210,11 +439,12 @@ html, body {
     /* position: absolute; */
     bottom: 0px;
     width: 100%;
-    height: 30px;
+    height: 100px;
     /* background-color:#861EF5; */
     float: left;
     padding-top: 5px;
     z-index: 5;
+    display:inline-block;
   }
 
   .nav-container {
@@ -249,8 +479,8 @@ html, body {
   }
 
   #bio {
+    flex-shrink: 3;
     max-width: 58%;
-    float: right;
     line-height: 30px;
     font-size: 18px;
     font-family: Helvetica, Arial, sans-serif;
@@ -280,8 +510,8 @@ html, body {
     padding-top: 2.5%;
     /* padding-left: 2.5%; */
     max-width: 37.5%;
-    min-width: 10%;
-    /* margin-right: 2.5%; */
+    flex-shrink: 1;
+    margin-right:35px;
     height: auto;
   }
 
@@ -305,12 +535,11 @@ html, body {
   }
 
   #foot-text-home {
-    /* color:#ffffff;
-    position: absolute; */
     bottom: 100%;
-    margin-bottom: 8px;
-    /* padding-left: 2.5%; */
     font-size: 10px;
+    width: 50%;
+    clear: right;
+    float: left;  
   }
 
   #off-wall {
@@ -334,9 +563,9 @@ html, body {
   }
 
   #training-pic {
-    padding-left: 5px;
     float: right;
-    width: 300px;
+    width: 25%;
+    padding-top: 5%;
   }
 
   #res1 {
