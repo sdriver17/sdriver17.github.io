@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Inter, Fraunces } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/data/siteConfig";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: siteConfig.title,
@@ -31,13 +45,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-off-white text-dark-gray font-sans antialiased">
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-        <Analytics />
-        <SpeedInsights />
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
+      <body className="bg-off-white dark:bg-[#1a1a1a] text-dark-gray dark:text-[#e0e0e0] antialiased">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <div className="fixed top-0 left-0 right-0 z-50 bg-off-white dark:bg-[#1a1a1a]">
+            <Navigation />
+          </div>
+          <main className="pt-[120px]">{children}</main>
+          <Analytics />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

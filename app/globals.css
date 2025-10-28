@@ -1,24 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: rgba(255, 255, 250, 1);
-  --foreground: #424242;
-  --brand-pink: #dd8fb9;
-  --link-gray: #707070;
+  /* Light Mode Colors */
+  --background: #FAF8F5;
+  --foreground: #2D2D2D;
+  --accent-green: #4A9B7F;
+  --accent-green-hover: #3A8069;
+  --link-gray: #666666;
   --link-hover: #000000;
+  --border-color: #E5E1DC;
+  --bg-secondary: #F5F1ED;
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --background: #1a1a1a;
+  --foreground: #e0e0e0;
+  --accent-green: #5DB69A;
+  --accent-green-hover: #6FC7AB;
+  --link-gray: #a0a0a0;
+  --link-hover: #ffffff;
+  --border-color: #333333;
+  --bg-secondary: #252525;
 }
 
 @theme inline {
   --color-off-white: var(--background);
   --color-dark-gray: var(--foreground);
-  --color-brand-pink: var(--brand-pink);
+  --color-accent-green: var(--accent-green);
+  --color-accent-green-hover: var(--accent-green-hover);
   --color-link-gray: var(--link-gray);
   --color-black: var(--link-hover);
-  --font-sans: Arial, Helvetica, sans-serif;
+  --color-border: var(--border-color);
+  --color-bg-secondary: var(--bg-secondary);
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
   --font-size-base: 18px;
   --line-height-relaxed: 30px;
   --letter-spacing-wide: 5px;
   --breakpoint-md: 770px;
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
@@ -45,6 +69,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-display);
   font-weight: bold;
   letter-spacing: 2px;
 }

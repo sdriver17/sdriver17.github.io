@@ -12,9 +12,9 @@ export const bioContent = {
 
 export const codingContent = {
   education:
-    "Double major in computer science and theater at Wesleyan University, with a 3.62 GPA.",
-  coursework:
-    "Relevant Coursework: Design and Implementation of Programming Languages, Advanced Topics in Computer Science, Security, Algorithms & Complexity, Programming Languages, Discrete Mathematics, Computer Science 1+2",
+    "Bachelor's Degree in Computer Science and Theater from Wesleyan University (May 2021), cum laude.",
+  about:
+    "Sam is an experienced developer and team leader with a passion for continuous learning and creativity. As a team lead and project manager, Sam excels at improving efficiency and communication within teams, delivering immediate ROI by optimizing task management and results analysis, and managing both up and down.",
   skills:
-    "Proficient in: HTML/CSS, JavaScript, C, SML, Java, SQL. Experience with front end and back end development, as well as web design.",
+    "Web Development • Security Best Practices • Scrum • GraphQL • Microservices • Machine Learning • Unit Testing • RESTful APIs • Python • Infrastructure As Code • Load Testing • System Architecture • Terraform • CDK • Kafka • People Management • Project Management • UX Design • Database Design • CI/CD • Git • Docker • Performance Optimization • Cloud Computing • Data Structures • TypeScript • JavaScript • AWS • Algorithms • Agile",
 };

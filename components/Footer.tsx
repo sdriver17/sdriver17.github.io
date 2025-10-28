@@ -3,14 +3,14 @@ import { siteConfig } from "@/data/siteConfig";
 
 export function Footer() {
   return (
-    <footer className="w-full py-8 mt-16 border-t border-gray-300">
+    <footer className="w-full py-8 mt-16 border-t border-border dark:border-border">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-center gap-8">
           <a
             href={siteConfig.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand-pink hover:text-brand-pink/80 transition-colors text-3xl"
+            className="text-accent-green hover:text-accent-green-hover transition-colors text-3xl"
             aria-label="Instagram"
           >
             <FaInstagram />
@@ -19,7 +19,7 @@ export function Footer() {
             href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand-pink hover:text-brand-pink/80 transition-colors text-3xl"
+            className="text-accent-green hover:text-accent-green-hover transition-colors text-3xl"
             aria-label="LinkedIn"
           >
             <FaLinkedin />
@@ -28,7 +28,7 @@ export function Footer() {
             href={siteConfig.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand-pink hover:text-brand-pink/80 transition-colors text-3xl"
+            className="text-accent-green hover:text-accent-green-hover transition-colors text-3xl"
             aria-label="GitHub"
           >
             <FaGithub />

@@ -224,29 +224,24 @@ export const designWorkExperience: WorkExperience[] = [
 
 export const codingWorkExperience: WorkExperience[] = [
   {
-    company: "Sharpen",
-    title: "Software Engineer II",
+    company: "Vivrelle",
+    title: "Senior Platform Engineer",
     description:
-      "Work as a member of the backend engineering team, focusing on building and designing new functionality. Primarily coding in Node.js and php, using mysql, postgres, and mongo as database servers. Working on both modern and legacy code bases, heavily involved in project planning and architecture design.",
+      "Launched an AI tool that integrated with major fashion companies FWRD and Revolve to complete user outfits, generating significant revenue within 1 month. Refactored the main product loader lambda function, leading to a 5% increase in uptime and 10% lower error rates. Aided in vendor renegotiations to lower cost of cloud by 25% and established company guidelines around the SDLC while mentoring junior engineers.",
+    url: "https://vivrelle.com/",
+  },
+  {
+    company: "Sharpen",
+    title: "Software Engineering Manager",
+    description:
+      "Led a cross-functional team of 4-8 developers, driving project delivery on-time while fostering professional growth through mentorship. Led initiatives including the company's first major AI project (now over $500k ARR). Spearheaded the transition of all infrastructure to IaC via AWS CDK, resulting in a 20% reduction in cloud costs and 15% increase in service uptime. Implemented new microservice design patterns that enhanced system performance by 10% and facilitated the launch of 5 critical projects ahead of schedule.",
     url: "https://sharpencx.com/",
   },
   {
-    company: "Wesleyan University",
-    title: "Course Assistant",
-    description:
-      "Worked as an assistant to Prof. Norman Danner for the upper level programming language design class. Led Students through an intensive course of designing a language from the ground up, including writing a compiler and interpreter. Ran study sessions and graded assignments.",
-  },
-  {
     company: "Kumbu",
-    title: "Intern",
+    title: "Software Engineer",
     description:
-      "Interned for Kumbu, a Paris based startup, in the Summer of 2016. Aided in the back-end of new web app, creating web-page mockups and helping with API integration. Reported remotely and worked in two languages.",
+      "Reported remotely in both English and French for a Paris-based web startup. Designed web page mockups and UI/UX elements across multiple application sections, resulting in increased user engagement. Developed and implemented end-to-end API integrations, including high-profile integrations with tech companies like Spotify.",
     url: "https://www.getkumbu.com",
-  },
-  {
-    company: "Engineering For Kids",
-    title: "Instructor",
-    description:
-      "Taught Game Design, Chemical Engineering, Medieval Engineering to 15-20 children, ages 5-12. Responsible for their education and safety including time spent using relatively dangerous materials.",
   },
 ];
