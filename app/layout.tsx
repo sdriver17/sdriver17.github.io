@@ -24,6 +24,14 @@ export const metadata: Metadata = {
   title: siteConfig.title,
   description: siteConfig.description,
   authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-icon.svg', type: 'image/svg+xml' },
+    ],
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
