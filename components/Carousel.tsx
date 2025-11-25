@@ -3,6 +3,8 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CarouselImage {
   src: string;
@@ -60,41 +62,47 @@ export function Carousel({ images, className = "" }: CarouselProps) {
   }, [scrollPrev, scrollNext]);
 
   return (
-    <div className={`relative ${className}`}>
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex">
-          {images.map((image, index) => (
-            <div key={index} className="flex-[0_0_100%] min-w-0">
-              <div className="relative w-full aspect-[3/4]">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                  sizes="(max-width: 770px) 100vw, 50vw"
-                />
+    <div className={`flex flex-col h-full ${className}`}>
+      <div className="relative group flex-1 flex flex-col">
+        <div className="overflow-hidden rounded-lg shadow-lg flex-1" ref={emblaRef}>
+          <div className="flex h-full">
+            {images.map((image, index) => (
+              <div key={index} className="flex-[0_0_100%] min-w-0">
+                <div className="relative w-full h-full bg-muted">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                    sizes="(max-width: 770px) 100vw, 50vw"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={scrollPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors z-10"
-        aria-label="Previous image"
-      >
-        &#10094;
-      </button>
-      <button
-        onClick={scrollNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white w-12 h-12 rounded-full flex items-center justify-center transition-colors z-10"
-        aria-label="Next image"
-      >
-        &#10095;
-      </button>
+        {/* Navigation Arrows */}
+        <Button
+          onClick={scrollPrev}
+          size="icon"
+          variant="secondary"
+          className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-10 shadow-lg hover:scale-110 duration-200"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </Button>
+        <Button
+          onClick={scrollNext}
+          size="icon"
+          variant="secondary"
+          className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-10 shadow-lg hover:scale-110 duration-200"
+          aria-label="Next image"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </Button>
+      </div>
 
       {/* Dot Indicators */}
       <div className="flex justify-center gap-2 mt-4">
@@ -102,8 +110,10 @@ export function Carousel({ images, className = "" }: CarouselProps) {
           <button
             key={index}
             onClick={() => scrollTo(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              index === selectedIndex ? "bg-black" : "bg-gray-400"
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+              index === selectedIndex
+                ? "bg-primary w-8"
+                : "bg-muted-foreground/40 hover:bg-muted-foreground/60"
             }`}
             aria-label={`Go to image ${index + 1}`}
           />

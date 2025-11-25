@@ -2,7 +2,8 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { Moon, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -14,26 +15,25 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <button
-        className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-        aria-label="Toggle theme"
-      >
+      <Button variant="ghost" size="icon" aria-label="Toggle theme" disabled>
         <div className="w-5 h-5" />
-      </button>
+      </Button>
     );
   }
 
   return (
-    <button
+    <Button
+      variant="ghost"
+      size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      className="hover:bg-secondary"
     >
       {theme === "dark" ? (
-        <FiSun className="w-5 h-5 text-accent-green" />
+        <Sun className="w-5 h-5 text-primary transition-transform hover:rotate-90 duration-300" />
       ) : (
-        <FiMoon className="w-5 h-5 text-accent-green" />
+        <Moon className="w-5 h-5 text-primary transition-transform hover:-rotate-12 duration-300" />
       )}
-    </button>
+    </Button>
   );
 }
