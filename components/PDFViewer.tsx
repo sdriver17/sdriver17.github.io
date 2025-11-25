@@ -1,3 +1,7 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Download } from "lucide-react";
+
 interface PDFViewerProps {
   src: string;
   title: string;
@@ -12,22 +16,27 @@ export function PDFViewer({
   className = "",
 }: PDFViewerProps) {
   return (
-    <div className={`flex flex-col ${className}`}>
-      <div className="mb-4">
-        <h3 className="text-xl font-bold mb-2">{title}</h3>
-        <a
-          href={src}
-          download={downloadFilename}
-          className="inline-block px-6 py-2 bg-accent-green text-white rounded hover:bg-accent-green-hover transition-colors"
-        >
-          Download {title}
-        </a>
-      </div>
-      <iframe
-        src={`${src}#toolbar=0&navpanes=0&scrollbar=0`}
-        className="w-full h-[600px] md:h-[800px] border border-border dark:border-border rounded"
-        title={title}
-      />
-    </div>
+    <Card className={`shadow-lg ${className}`}>
+      <CardHeader>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <CardTitle className="text-xl">{title}</CardTitle>
+          <Button asChild size="sm" className="w-fit">
+            <a href={src} download={downloadFilename}>
+              <Download className="mr-2 h-4 w-4" />
+              Download
+            </a>
+          </Button>
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="rounded-lg overflow-hidden border border-border">
+          <iframe
+            src={`${src}#toolbar=0&navpanes=0&scrollbar=0`}
+            className="w-full h-[600px] md:h-[800px]"
+            title={title}
+          />
+        </div>
+      </CardContent>
+    </Card>
   );
 }

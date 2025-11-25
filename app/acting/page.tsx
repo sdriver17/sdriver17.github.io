@@ -1,5 +1,7 @@
 import { CreditsTable } from "@/components/CreditsTable";
 import { Footer } from "@/components/Footer";
+import { PageTransition } from "@/components/PageTransition";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { actingCredits, actingTraining } from "@/data/credits";
 import Image from "next/image";
 import type { Metadata } from "next";
@@ -12,35 +14,44 @@ export const metadata: Metadata = {
 
 export default function ActingPage() {
   return (
-    <>
+    <PageTransition>
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Training Section */}
-          <div>
-            <h2 className="text-2xl font-bold mb-6">TRAINING</h2>
-            <div className="space-y-6">
+          <Card className="shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-3xl">TRAINING</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
               {actingTraining.map((training, index) => (
-                <div key={index}>
-                  <h4 className="font-bold mb-2">{training.institution}</h4>
-                  <p className="mb-3">{training.description}</p>
+                <div key={index} className="space-y-2">
+                  <h4 className="font-bold text-lg">{training.institution}</h4>
+                  <p className="text-muted-foreground mb-3">
+                    {training.description}
+                  </p>
                   {training.faculty.map((dept, deptIndex) => (
-                    <p key={deptIndex} className="text-sm mb-1">
-                      <strong>{dept.department}:</strong> {dept.instructors}
+                    <p key={deptIndex} className="text-sm">
+                      <strong className="text-foreground">
+                        {dept.department}:
+                      </strong>{" "}
+                      <span className="text-muted-foreground">
+                        {dept.instructors}
+                      </span>
                     </p>
                   ))}
                 </div>
               ))}
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
           {/* Training Image */}
           <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-md aspect-square">
+            <div className="relative w-full max-w-md aspect-square rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/portfolio/ppic2.jpg"
                 alt="Sam Driver performance photo"
                 fill
-                className="object-cover rounded"
+                className="object-cover hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 770px) 100vw, 50vw"
               />
             </div>
@@ -48,12 +59,12 @@ export default function ActingPage() {
         </div>
 
         {/* Credits Section */}
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold mb-6">SELECTED CREDITS</h2>
+        <div className="mt-16">
+          <h2 className="text-3xl font-bold mb-6">SELECTED CREDITS</h2>
           <CreditsTable credits={actingCredits} />
         </div>
       </div>
       <Footer />
-    </>
+    </PageTransition>
   );
 }

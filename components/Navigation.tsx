@@ -2,74 +2,81 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { navigation } from "@/data/siteConfig";
 import { ThemeToggle } from "./ThemeToggle";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 export function Navigation() {
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    }
-
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMenuOpen]);
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className="w-full border-b border-border dark:border-border">
+    <header className="w-full border-b border-border sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       {/* Mobile Navigation */}
-      <div className="md:hidden" ref={menuRef}>
-        <div className="flex items-center justify-between px-4 py-3 bg-black dark:bg-gray-900">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="font-bold tracking-wider text-white"
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-          >
-            MENU
-          </button>
+      <div className="md:hidden">
+        <div className="flex items-center justify-between px-4 py-4">
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="font-bold tracking-wider"
+                aria-label="Toggle menu"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[280px]">
+              <SheetHeader>
+                <SheetTitle className="text-2xl font-bold tracking-[5px] text-left">
+                  SAM DRIVER
+                </SheetTitle>
+              </SheetHeader>
+              <nav
+                className="flex flex-col gap-4 mt-8"
+                role="navigation"
+                aria-label="Main navigation"
+              >
+                {navigation.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`text-lg py-3 px-4 rounded-md transition-colors hover:bg-secondary ${
+                      pathname === item.href
+                        ? "font-bold text-primary bg-secondary"
+                        : "text-muted-foreground"
+                    }`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+          <h1 className="text-xl font-bold tracking-[5px]">SAM DRIVER</h1>
           <ThemeToggle />
         </div>
-        {isMenuOpen && (
-          <nav
-            className="bg-black dark:bg-gray-900"
-            role="navigation"
-            aria-label="Main navigation"
-          >
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`block py-3 px-5 text-white hover:bg-gray-800 dark:hover:bg-gray-700 transition-colors ${
-                  pathname === item.href ? "font-bold" : ""
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        )}
       </div>
 
       {/* Desktop Navigation */}
       <div className="hidden md:block">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center justify-between py-6">
-            <h1 className="text-2xl font-bold tracking-[5px]">SAM DRIVER</h1>
+            <Link href="/" className="group">
+              <h1 className="text-2xl font-bold tracking-[5px] transition-colors hover:text-primary">
+                SAM DRIVER
+              </h1>
+            </Link>
             <div className="flex items-center gap-8">
               <nav
                 className="flex gap-8"
@@ -80,13 +87,20 @@ export function Navigation() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`transition-colors ${
+                    className={`relative transition-colors group ${
                       pathname === item.href
-                        ? "text-black dark:text-white font-bold"
-                        : "text-link-gray dark:text-link-gray hover:text-accent-green dark:hover:text-accent-green"
+                        ? "text-foreground font-bold"
+                        : "text-muted-foreground hover:text-primary"
                     }`}
                   >
                     {item.label}
+                    <span
+                      className={`absolute -bottom-1 left-0 h-[2px] bg-primary transition-all duration-300 ${
+                        pathname === item.href
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    />
                   </Link>
                 ))}
               </nav>
@@ -94,11 +108,6 @@ export function Navigation() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Mobile Title Bar */}
-      <div className="md:hidden text-center py-6">
-        <h1 className="text-2xl font-bold tracking-[5px]">SAM DRIVER</h1>
       </div>
     </header>
   );
